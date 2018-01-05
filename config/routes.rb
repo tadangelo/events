@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get 'index', to: 'events#index'
   get '/events/all', to: 'events#all'
+
+  root :to => 'events#home'
 end
