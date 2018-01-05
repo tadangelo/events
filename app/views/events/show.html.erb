@@ -4,8 +4,9 @@
     <div class="row show-row show-hide-over">
       <div class="col-md-8 show-top-row">
         <%= image_tag @event.image, class: "event-main-image" %>
+        <span class="show-title-span"><%= @event.title %></span>
       </div>
-      <div class="col-md-4" id="info">
+      <div class="col-md-4" id="show-info">
         <p>Date: <%= @event.date %></p>
         <p>Time: 12:00am </p>
         <p>Description: <%= @event.description %></p>
@@ -13,7 +14,6 @@
         <p>Attendees: dynamic</p>
         <button class></button>
         Are you going?
-        | yes | | no | buttons styled to match main Bottega site (Js connected for dropdown (wait till last))
       </div>
 
       <div class="col-md-5" id="map">
