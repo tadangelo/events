@@ -14,32 +14,3 @@
  *= require_self
  */
 
- @import "materialize";
-
- body {
-   background-color: #1C1C1C;
- }
-
- .card.horizontal {
-   height: 100%;
- }
-
- .card-action {
-   text-align: center;
- }
-
- #card-action {
-   background: #36e29d;
-   &:hover {
-     background: #34a853 ;
-   }
- }
-
- #card-action a {
-   color: white;
- }
-
- .slider {
-   border-radius: 1em;
-   padding-top: 0px;
- }
