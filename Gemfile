@@ -50,6 +50,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'devise', '~> 4.4'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+
 
 gem 'materialize', '~> 0.4.4'
 gem 'materialize-sass'
