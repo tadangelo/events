@@ -27,7 +27,7 @@ class EventsController < ApplicationController
       end
     end
   end
-  
+
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @event.destroy
     respond_to do |format|
