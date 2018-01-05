@@ -1,5 +1,14 @@
 class EventsController < ApplicationController
+
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
+  def home
+    @events = Event.all
+  end
+
+  def index
+    @events = Event.all
+  end
 
   def show
     @event
