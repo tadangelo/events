@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
   
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.create!(event_params)
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Your event was created'}
@@ -58,7 +58,11 @@ class EventsController < ApplicationController
     end
     
     def event_params
-      params.require(:event).permit(:title, :body)
+
+      params.require(:event).permit(:title, :body, :user_id)
+
+      params.require(:event).permit(:title, :body, :image, :thumb_image)
+
     end
 
 
