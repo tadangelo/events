@@ -1,16 +1,19 @@
 class EventsController < ApplicationController
-  class EventsController < ApplicationController
     before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
     @events = Event.all
   end
+
   def show
   end
+
   def new
     @event = Event.new
   end
+
   def edit
   end
+
   def create
     @event = Event.new(event_params)
     respond_to do |format|
@@ -23,6 +26,7 @@ class EventsController < ApplicationController
       end
     end
   end
+
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -32,6 +36,7 @@ class EventsController < ApplicationController
       end
     end
   end
+
   def destroy
     @event.destroy
     respond_to do |format|
@@ -46,4 +51,4 @@ class EventsController < ApplicationController
       params.require(:event).permit(:title, :body)
     end
 end
-end
+
