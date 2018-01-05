@@ -51,5 +51,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'devise', '~> 4.4'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'mini_magick', '~> 4.8'
+gem 'carrierwave-aws', '~> 1.3'
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
