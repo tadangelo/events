@@ -1,17 +1,21 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @event = Event.all
+  def show
+    @event
+    @location = "2912+Executive+Pkwy,Lehi,UT"
   end
 
-  def show
-    @event = Event.find(params[:id])
-    @location = "2912+Executive+Pkwy,Lehi,UT"
+  def index
+    @events = Event.all
   end
 
   def new
     @event = Event.new
+  end
+
+  def home
+    @events = Event.all
   end
 
   def edit
