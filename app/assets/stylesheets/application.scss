@@ -15,8 +15,8 @@
  *= require_self
  */
 
+ // @import "bootstrap";
  @import "materialize";
- @import "bootstrap";
 
  body {
    background-color: #1C1C1C;
@@ -49,7 +49,8 @@
 // ==================== Show Page Styles ======================//
 
 .event-map {
-  width: 100%;
+  width: 95%;
+
 }
 
 .event-main-image {
@@ -57,8 +58,32 @@
 }
 
 .show-top-row {
-  max-height: 400px;
+  // max-height: 400px;
   overflow: hidden;
+  padding: 0px;
+  margin: 0px;
 }
+
+#map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-wrapper {
+  padding: 0px;
+  margin:0px;
+}
+
+.show-row {
+  margin: 0px;
+  padding: 0px;
+}
+
+.show-hide-over {
+  overflow:hidden;
+}
+
 
 // ==================== Show Page Styles End ======================//
