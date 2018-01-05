@@ -5,10 +5,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @events = Event.all
+    @event = Event.find(params[:id])
+    @location = "2912+Executive+Pkwy,Lehi,UT"
   end
-
-  # def set_event
-  #   @event = Event.find(params[:id])
-  # end
 end
