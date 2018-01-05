@@ -2,7 +2,7 @@
   <div class="card">
     <div class="row">
       <div class="col-md-8" id="Image">
-        <%= @event.image %>
+        <%= image_tag @event.image, class: "event-main-image" %>
       </div>
       <div class="col-md-4" id="info">
         <p>Date: <%= @event.date %></p>
@@ -16,7 +16,7 @@
       </div>
 
       <div class="col-md-4" id="map">
-        <img src="<%= "https://maps.googleapis.com/maps/api/staticmap?center=" + @location + "&zoom=13&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C" + @location %>">
+        <img class="event-map" src="<%= "https://maps.googleapis.com/maps/api/staticmap?center=" + @location + "&zoom=13&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C" + @location %>">
       </div>
       <div class="col-md-8" id="guest-form">
         if your a signed in user
