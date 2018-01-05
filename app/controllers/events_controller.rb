@@ -1,13 +1,15 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
-  
+   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def index
     @events = Event.all
   end
-  
+
   def show
+    @event = Event.find(params[:id])
+    @location = "2912+Executive+Pkwy,Lehi,UT"
   end
-  
+
   def new
     @event = Event.new
   end
@@ -54,5 +56,6 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :body, :image, :thumb_image)
     end
+
 
 end
