@@ -1,35 +1,22 @@
 class EventsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
-  def home
-    @events = Event.all
-  end
-
+  before_action :set_event_show, only: [:edit, :update, :destroy]
+  
   def index
-    @event = Event.all
-  end
-
-  def show_all
-    @event = Event.all
+    @events = Event.all
   end
 
   def show
-    @event
+    @event = Event.find(params[:id])
     @location = "2912+Executive+Pkwy,Lehi,UT"
   end
 
-  def index
-    @events = Event.all
-  end
 
   def new
     @event = Event.new
   end
 
-  def home
-    @events = Event.all
-  end
 
   def edit
   end
@@ -68,6 +55,13 @@ class EventsController < ApplicationController
 
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def set_event_show
+      @event = current_user.events.find(params[:id])
+
+      rescue ActiveRecord::RecordNotFound
+      redirect_to(root_url, :notice => 'Record not found')
     end
 
     def event_params
