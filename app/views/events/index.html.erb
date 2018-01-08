@@ -1,5 +1,6 @@
 <h1>All Events</h1>
 
+ <% @events.each do |event| %>
   <div class="album text-muted">
     <div class="container">
       <div class="card">
@@ -10,8 +11,16 @@
               <%= image_tag "#{event.thumb_image}", width: 300, height: 300 %>
             </div>
           </div>
+          <div class="col-md-6">
+            <div class="column-right">
+              <p><%= event.description %></p>
+          
+              <p><%= "Event took place at #{event.location}." %></p>
+            </div>
+          </div>
           <hr>
         </div>
       </div>
     </div>
   </div>
+<% end %>
