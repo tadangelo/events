@@ -4,6 +4,8 @@ class EventsController < ApplicationController
   before_action :set_event_show, only: [:edit, :update, :destroy]
   
   def index
+    @users = User.all
+    @favorited = Favorite.where(user_id: current_user)
     @events = Event.all
   end
 

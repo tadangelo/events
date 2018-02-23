@@ -1,0 +1,9 @@
+<% @favorited.each do |i| %>
+<% @events.each do |t| %>
+<% if i.event_id == t.id %>
+  <div>
+    <%= t.title %>
+  </div>
+    <% end %>
+  <% end %>
+<% end %>

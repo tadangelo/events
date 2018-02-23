@@ -10,12 +10,17 @@
       <div class="col-md-4" id="show-info">
         <p>Date: <%= @event.date %></p>
         <p>Description: <%= @event.body %></p>
-        <p>Location: <%= @event.location %>
+        <p>Location: <%= @event.location %></p>
         <p>Attendees: dynamic</p>
+        <div>
         <button class></button>
         Are you going?
       </div>
-
+      <div>
+        <button class></button>
+        Favorite this for later
+      </div>
+        </div>
       <div class="col-md-5" id="map">
         <img class="event-map" src="<%= "https://maps.googleapis.com/maps/api/staticmap?center=" + @location + "&zoom=13&scale=1&size=600x400&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C" + @location %>">
       </div>
