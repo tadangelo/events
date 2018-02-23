@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
   def index
+    @users = User.all
+    @favorited = Favorite.where(user_id: current_user)
     @events = Event.all
     @attending_events = Attendee.all
     @users = User.all

@@ -1,7 +1,12 @@
 <h1>All Events</h1>
-
-<iframe src="https://calendar.google.com/calendar/embed?src=bottega.tech.dummy%40gmail.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
+<div class="row">
+  <div class="col-md-8">
+  <iframe src="https://calendar.google.com/calendar/embed?src=bottega.tech.dummy%40gmail.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <div class="col-md-4">
+    <%= render 'favorite' %>
+  </div>
+</div>
  <% @events.each do |event| %>
   <div class="album text-muted">
     <div class="container">
