@@ -6,10 +6,15 @@ class EventsController < ApplicationController
   
   def index
     @events = Event.all
+    @attending_events = Attendee.all
+    @users = User.all
   end
+
 
   def show
     @event = Event.find(params[:id])
+    @attendees = Attendee.where(event_id: @event)
+    @users = User.all
     @location = "2912+Executive+Pkwy,Lehi,UT"
   end
 
@@ -25,6 +30,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.create!(event_params)
     respond_to do |format|
+
       if @event.save
         format.html { redirect_to @event, notice: 'Your event was created'}
       else

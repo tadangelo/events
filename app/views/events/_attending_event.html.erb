@@ -1,0 +1,9 @@
+
+
+<% @attendees.each do |i| %>
+  <% @users.each do |t| %>
+    <% if i.user_id == t.id%>
+      <%=t.name%>
+    <%end %>
+  <%end %>
+<%end %>
