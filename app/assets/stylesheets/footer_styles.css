@@ -1,0 +1,14 @@
+. referral {
+  color: white;
+}
+
+. footer-button {
+  color: #00b675;
+  height: 30px;
+  width: 90px;
+}
+
+. referral a:link {
+  text-decoration: none;
+
+}
