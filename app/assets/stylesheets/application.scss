@@ -1,21 +1,7 @@
-
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
  @import "materialize";
+
+ @import "gritter";
+
  @import url('https://fonts.googleapis.com/css?family=Maven+Pro:700|Roboto:300,300i,500,500i');
 
  body {
@@ -95,6 +81,8 @@ h3 {
   }
 
 
+
+
  .card.horizontal {
    height: 100%;
  }
@@ -143,9 +131,6 @@ h3 {
    padding-top: 0px;
  }
 
- .masthead clearfix {
-   background: #36e29d;
- }
 
 .event-map {
   width: 95%;
@@ -201,41 +186,6 @@ h3 {
   font-size: 3em;
   color: #34a853;
   font-weight: 800;
-}
-
-.nav-masthead {
-   background-color: black;
-
-
-}
-
-.nav-masthead a{
-  padding-left: 20px;
-}
-
-.input-item {
-  text-align: left;
-  margin-bottom: 22px;
-  
-
-}
-
-.link-styles a {
-  color: #26272b;
-}
-
-.link-styles a:hover {
-  color: #00cb79;
-}
-
-.top-text {
-  color: #77797a;
-  text-align: center;
-  color: #77797a;
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 20px;
-
 }
 
 

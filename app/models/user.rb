@@ -4,9 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
 		 :recoverable, :rememberable, :trackable, :validatable
 
-	has_many :events
-  
 
+	has_many :favorites
+
+	has_many :events
 
 	validates_presence_of :name
+
 end
