@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:700|Roboto:300,300i,500,500i');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16pt;
+  font-weight: light;
+}
+
+h1 {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 58pt;
+  font-style: bold;
+}
+
+h2 {
+  font-size: 22pt;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18pt;
+  font-weight: medium;
+}
+
+
+
+.header {
+  left: 0;
+  margin: 0;
+  min-height: 60px;
+  padding: 0 !important;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.new-navbar {
+  background-color: rgba(0, 0, 0, 0);
+  background: #fff;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #e5e5e5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  height: 60px;
+  text-align: center;
+  text-decoration-color: rgb(51, 186, 132);
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  top: 0;
+  transition-delay: initial;
+  transition-duration: 0.2s;
+  transition-property: top 0.2s;
+  transition-timing-function: ease-in-out;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+}
+
+.navbar-brand {
+  font-size: 18px;
+  line-height: 20px;
+
+}
+
+.navbar-left {
+  text-align: left;
+}
+
+.navbar-right {
+  text-align: right;
+}
+
+.devise-dropdown a {
+  font-size: 13px;
+}
