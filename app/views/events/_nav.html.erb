@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/nav.scss">
+</head>
+<body>
+
+  <nav>
+    <div class="new-navbar">
+
+      <div class="navbar-brand">
+        <%= link_to image_tag("nav.png"), root_path %> 
+      </div>
+
+      <div class="left">
+        <%= link_to "Home", root_path %>
+        <%= link_to "Add a New Event", new_event_path %>
+      </div>
+
+      <div class="devise-dropdown">
+        <%= render "shared/devise_links" %>
+      </div>
+
+
+    </div>
+
+  </nav>
+</body>
+</html>
