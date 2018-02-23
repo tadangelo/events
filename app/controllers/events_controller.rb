@@ -2,15 +2,21 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_event_show, only: [:edit, :update, :destroy]
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
   def index
     @users = User.all
     @favorited = Favorite.where(user_id: current_user)
     @events = Event.all
+    @attending_events = Attendee.all
+    @users = User.all
   end
+
 
   def show
     @event = Event.find(params[:id])
+    @attendees = Attendee.where(event_id: @event)
+    @users = User.all
     @location = "2912+Executive+Pkwy,Lehi,UT"
   end
 
@@ -26,6 +32,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.create!(event_params)
     respond_to do |format|
+
       if @event.save
         format.html { redirect_to @event, notice: 'Your event was created'}
       else

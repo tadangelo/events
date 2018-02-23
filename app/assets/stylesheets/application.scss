@@ -1,21 +1,87 @@
-
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
  @import "materialize";
+
+ @import "gritter";
+
+ @import url('https://fonts.googleapis.com/css?family=Maven+Pro:700|Roboto:300,300i,500,500i');
+
+ body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: light;
+  font-size: 16pt;
+}
+
+h1 {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 58pt;
+  font-style: bold;
+}
+
+h2 {
+  font-size: 22pt;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: medium;
+  font-size: 18pt;
+}
+
+ body {
+   font-family: 'Montserrat', sans-serif !important;
+   width: 100%;
+  background-color: rgb(247, 247, 247);
+ }
+ .row {
+  text-align: center;
+ }
+
+ a,
+ a:focus,
+ a:hover {
+  transition: background-color, color 100ms ease-out 100ms;
+ }
+
+  .btn-lrg > input {
+    height: 45px;
+    margin-top: 38px;
+    margin-bottom: 22px;
+    line-height: 35px;
+    white-space: nowrap;
+    background-color: #3ae39f;
+    width: 100%;
+    border-radius: 3px;
+    color: #fff;
+
+ }
+  .btn-lrg > input:hover {
+    background-color: #00cb79;
+    transition: background-color 100ms ease-out 100ms;
+  }
+
+    .btn-med > input {
+    height: 45px;
+    margin-top: 38px;
+    margin-bottom: 22px;
+    line-height: 35px;
+    white-space: nowrap;
+    background-color: #3ae39f;
+    width: 70%;
+    border-radius: 3px;
+    color: #fff;
+
+ }
+  .btn-med > input:hover {
+    background-color: #00cb79;
+    transition: background-color 100ms ease-out 100ms;
+  }
+
+  .container {
+    align-items: center;
+    
+  }
+
+
+
 
  .card.horizontal {
    height: 100%;
@@ -34,16 +100,37 @@
 
  #card-action a {
    color: white;
+
  }
+
+ .card {
+  background-color: white;
+ }
+
+
+ .card-sizing{
+/*  margin-bottom: 20px;*/
+  text-align: center;
+  background-color: #fff; 
+  padding: 33px 90px 65px 90px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid lightgrey;
+  
+ }
+
+ .form-control {
+  border: 1px solid black;
+  margin: 0 0 20px 0;
+ }
+
+
 
  .slider {
    border-radius: 1em;
    padding-top: 0px;
  }
 
- .masthead clearfix {
-   background: #36e29d;
- }
 
 .event-map {
   width: 95%;
@@ -101,11 +188,5 @@
   font-weight: 800;
 }
 
-.nav-masthead {
-   background-color: black;
-   padding-left: 20px;
-}
 
-.nav-masthead a{
-  padding-left: 20px;
-}
+

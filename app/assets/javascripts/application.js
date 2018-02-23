@@ -14,6 +14,7 @@
 //= require rails-ujs
 //= require materialize
 //= require materialize-sprockets
-//= require bootstrap-sprockets
+//= require gritter
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
