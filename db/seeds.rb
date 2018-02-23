@@ -23,19 +23,8 @@ puts "10 example events created!"
   Favorite.create!(event_id: myrnd, user_id: myrnd2)
 end
 
-puts "10 attendee records created"
+puts "10 favorite records created"
 
-10.times do |i|
-  User.create!(email: "test#{i}@test.com", name: "user#{i}", password: "asdfasdf", password: "asdfasdf")
-end
-
-puts "10 users created"
-
-10.times do |i|
-Event.create!(title: "event#{i}", user_id: 1)
-end
-
-puts "10 events created"
 
 10.times do
 myrnd = rand(1..10)
