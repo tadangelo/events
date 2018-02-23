@@ -27,10 +27,11 @@
 
     
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
 
     <%= yield %>
+
+    <%= js add_gritter(flash[:notice], title: "Events App Notification", sticky: false) %> 
 
   </body>
 </html>

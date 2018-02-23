@@ -57,10 +57,9 @@ gem 'materialize-sass'
 gem 'material_icons', '~> 2.2', '>= 2.2.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap', '~> 4.0.0.beta3'
+gem 'gritter', '~> 1.2'
 gem 'devise', '~> 4.4'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'mini_magick', '~> 4.8'
 gem 'carrierwave-aws', '~> 1.3'
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
-
-ruby "2.4.1"
