@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_event_show, only: [:edit, :update, :destroy]
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   
   def index
     @events = Event.all
