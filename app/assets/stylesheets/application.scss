@@ -16,6 +16,29 @@
  */
 
  @import "materialize";
+ @import url('https://fonts.googleapis.com/css?family=Maven+Pro:700|Roboto:300,300i,500,500i');
+
+ body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: light;
+  font-size: 16pt;
+}
+
+h1 {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 58pt;
+  font-style: bold;
+}
+
+h2 {
+  font-size: 22pt;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: medium;
+  font-size: 18pt;
+}
 
  .card.horizontal {
    height: 100%;
