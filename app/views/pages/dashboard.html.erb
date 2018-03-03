@@ -1,5 +1,27 @@
 <h1>Dashboard</h1>
+<p>Welcome <%= current_user.name %></p>
 
-<%= @events.each do |event| %>
+<h4>My Events</h4>
 
-<% end %>
+  <% @events.each do |event| %>
+    <p><%= event.title %></p>
+    <p><%= event.body %></p>
+    <p><%= event.location %></p>
+    <hr>
+  <% end %>
+
+<h4>My RSVPs</h4>
+
+  <% @rsvps.each do |rsvp| %>
+    <p><%= rsvp.event.title %></p>
+    <p><%= rsvp.event.location %></p>
+    <hr>
+  <% end %>
+
+<h4>My Favorites</h4>
+
+  <% @favorites.each do |favorite| %>
+    <p><%= favorite.event.title %></p>
+    <p><%= favorite.event.location %></p>
+    <hr>
+  <% end %>
