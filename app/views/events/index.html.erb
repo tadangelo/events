@@ -20,7 +20,24 @@
               <p><%= event.body %></p>
               <p><%= "Event took place at #{event.location}." %></p>
 
-              <%= button_to "RSVP", rsvp_path(rsvp), method: :delete %>
+              <% if current_user %>
+
+                <% if current_user.rsvps.where(event_id: event.id).count > 0 %>
+                  <%= button_to 'Un-RSVP', rsvp_path(@rsvps.where(event_id: event.id).first.id), method: :delete %>
+                <% else %>
+                  <%= button_to 'RSVP', rsvps_path(:event_id => event.id) %>
+                <% end %>
+
+                <% if current_user.favorites.where(event_id: event.id).count > 0 %>
+                  <%= button_to 'Un-Favorite', favorite_path(@favorites.where(event_id: event.id).first.id), method: :delete %>
+                <% else %>
+                  <%= button_to 'Favorite', favorites_path(:event_id => event.id) %>
+                <% end %>
+
+              <% else %>
+                <%= button_to "RSVP", new_user_session_path %>
+                <%= button_to "Favorite", new_user_session_path %>
+              <% end %>
 
             </div>
           </div>
@@ -30,3 +47,4 @@
     </div>
   </div>
 <% end %>
+
