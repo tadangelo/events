@@ -1,50 +1,31 @@
-<h1>All Events</h1>
+<div class="album text-muted">
+  <h1>All Events</h1>
+  <div class="row">
 
- <% @events.each do |event| %>
-  <div class="album text-muted">
-    <div class="container">
-      <div class="card">
+    <% @events.each do |event| %>
+      <div class="card card-custom">
         <div class="row">
-          <div class="col-md-12">
-            <h3 class="event-title"><%= link_to event.title.titleize, event %></h3>
+
+          <div class="col-md-3">
+            <%= image_tag "#{event.thumb_image}", width: 100, height: 100 %>            
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="column-left">
-              <%= image_tag "#{event.thumb_image}", width: 300, height: 300 %>
-            </div>
+
+          <div class="col-md-7">
+            <h3><%= link_to event.title.titleize, event %><%= event.date %></h3>
+            <%= "What: #{truncate(event.body, length: 35)}" %> 
+            <br>
+            <%= "Where: #{event.location}" %>
           </div>
-          <div class="col-md-6">
-            <div class="column-right">
-              <p><%= event.body %></p>
-              <p><%= "Event took place at #{event.location}." %></p>
 
-              <% if current_user %>
-
-                <% if current_user.rsvps.where(event_id: event.id).count > 0 %>
-                  <%= button_to 'Un-RSVP', rsvp_path(@rsvps.where(event_id: event.id).first.id), method: :delete %>
-                <% else %>
-                  <%= button_to 'RSVP', rsvps_path(:event_id => event.id) %>
-                <% end %>
-
-                <% if current_user.favorites.where(event_id: event.id).count > 0 %>
-                  <%= button_to 'Un-Favorite', favorite_path(@favorites.where(event_id: event.id).first.id), method: :delete %>
-                <% else %>
-                  <%= button_to 'Favorite', favorites_path(:event_id => event.id) %>
-                <% end %>
-
-              <% else %>
-                <%= button_to "RSVP", new_user_session_path %>
-                <%= button_to "Favorite", new_user_session_path %>
-              <% end %>
-
-            </div>
+          <div class="col-md-2">
+            <%= render partial: 'buttons', locals: {event: event} %>
           </div>
-          <hr>
-        </div>
-      </div>
-    </div>
+
+        </div> <!-- Row -->
+      </div> <!-- Card -->
+    <% end %>
+
   </div>
-<% end %>
+</div>
+
 
