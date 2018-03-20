@@ -1,24 +1,27 @@
-<div class="album text-muted">
-  <h1>All Events</h1>
+<div>
+  <div class="headings">  
+    <h1>Upcoming Events</h1>
+  </div>
   <div class="row">
 
     <% @events.each do |event| %>
       <div class="card card-custom">
         <div class="row">
 
-          <div class="col-md-3">
-            <%= image_tag "#{event.thumb_image}", width: 100, height: 100 %>            
+          <div class="col-2">
+            <%= image_tag event.main_image, width: 100, height: 100 %>            
           </div>
 
-          <div class="col-md-7">
-            <h3><%= link_to event.title.titleize, event %><%= event.date %></h3>
-            <%= "What: #{truncate(event.body, length: 35)}" %> 
+          <div class="col-7 content-center">
+            <h3><%= link_to truncate(event.title.titleize, length: 25), event, class: "card-heading" %></h3>
+            <hr>
+            <span style="color: #3AE39F">When: &nbsp;&nbsp;</span><%= event.date.strftime("%A, %B %Y") %> 
             <br>
-            <%= "Where: #{event.location}" %>
+            <span style="color: #3AE39F">Where: &nbsp;</span><%= event.location %>
           </div>
 
-          <div class="col-md-2">
-            <%= render partial: 'buttons', locals: {event: event} %>
+          <div class="col-2">
+            <%= render partial: 'shared/buttons', locals: {event: event} %>
           </div>
 
         </div> <!-- Row -->

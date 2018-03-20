@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
 
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to root_url }
+        format.html { redirect_back fallback_location: root_path }
       end
     end
   end
@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite.destroy
     respond_to do |format|
-      format.html { redirect_to root_url }
+      format.html { redirect_back fallback_location: root_path }
     end
   end
 

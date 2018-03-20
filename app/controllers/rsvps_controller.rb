@@ -11,7 +11,7 @@ class RsvpsController < ApplicationController
 
     respond_to do |format|
       if @rsvp.save
-        format.html { redirect_to root_url }
+        format.html { redirect_back fallback_location: root_path }
       end
     end
   end
@@ -19,7 +19,7 @@ class RsvpsController < ApplicationController
   def destroy
     @rsvp.destroy
     respond_to do |format|
-      format.html { redirect_to root_url }
+      format.html { redirect_back fallback_location: root_path }
     end
   end
 

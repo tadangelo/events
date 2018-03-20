@@ -1,27 +1,101 @@
 <h1>Dashboard</h1>
 <p>Welcome <%= current_user.name %></p>
 
-<h4>My Events</h4>
+<div>
+  <div class="headings">  
+    <h1>My Events</h1>
+  </div>
+  <div class="row">
 
-  <% @events.each do |event| %>
-    <p><%= event.title %></p>
-    <p><%= event.body %></p>
-    <p><%= event.location %></p>
-    <hr>
-  <% end %>
+    <% @events.each do |event| %>
+      <div class="card card-custom">
+        <div class="row">
 
-<h4>My RSVPs</h4>
+          <div class="col-2">
+            <%= image_tag event.main_image, width: 100, height: 100 %>            
+          </div>
 
-  <% @rsvps.each do |rsvp| %>
-    <p><%= rsvp.event.title %></p>
-    <p><%= rsvp.event.location %></p>
-    <hr>
-  <% end %>
+          <div class="col-7 content-center">
+            <h3><%= link_to truncate(event.title.titleize, length: 25), event, class: "card-heading" %></h3>
+            <hr>
+            <span style="color: #3AE39F">When: &nbsp;&nbsp;</span><%= event.date.strftime("%A, %B %Y") %> 
+            <br>
+            <span style="color: #3AE39F">Where: &nbsp;</span><%= event.location %>
+          </div>
 
-<h4>My Favorites</h4>
+          <div class="col-2">
+            <%= render partial: 'shared/buttons', locals: {event: event} %>
+          </div>
 
-  <% @favorites.each do |favorite| %>
-    <p><%= favorite.event.title %></p>
-    <p><%= favorite.event.location %></p>
-    <hr>
-  <% end %>
+        </div> <!-- Row -->
+      </div> <!-- Card -->
+    <% end %>
+
+  </div>
+</div>
+
+<div>
+  <div class="headings">  
+    <h1>My RSVPS</h1>
+  </div>
+  <div class="row">
+
+    <% @rsvps.each do |rsvp| %>
+      <div class="card card-custom">
+        <div class="row">
+
+          <div class="col-2">
+            <%= image_tag rsvp.event.main_image, width: 100, height: 100 %>            
+          </div>
+
+          <div class="col-7 content-center">
+            <h3><%= link_to truncate(rsvp.event.title.titleize, length: 25), rsvp.event, class: "card-heading" %></h3>
+            <hr>
+            <span style="color: #3AE39F">When: &nbsp;&nbsp;</span><%= rsvp.event.date.strftime("%A, %B %Y") %> 
+            <br>
+            <span style="color: #3AE39F">Where: &nbsp;</span><%= rsvp.event.location %>
+          </div>
+
+          <div class="col-2">
+            <%= render partial: 'shared/buttons', locals: {event: rsvp.event} %>
+          </div>
+
+        </div> <!-- Row -->
+      </div> <!-- Card -->
+    <% end %>
+
+  </div>
+</div>
+
+<div>
+  <div class="headings">  
+    <h1>My Favorites</h1>
+  </div>
+  <div class="row">
+
+    <% @favorites.each do |favorite| %>
+      <div class="card card-custom">
+        <div class="row">
+
+          <div class="col-2">
+            <%= image_tag favorite.event.main_image, width: 100, height: 100 %>            
+          </div>
+
+          <div class="col-7 content-center">
+            <h3><%= link_to truncate(favorite.event.title.titleize, length: 25), favorite.event, class: "card-heading" %></h3>
+            <hr>
+            <span style="color: #3AE39F">When: &nbsp;&nbsp;</span><%= favorite.event.date.strftime("%A, %B %Y") %> 
+            <br>
+            <span style="color: #3AE39F">Where: &nbsp;</span><%= favorite.event.location %>
+          </div>
+
+          <div class="col-2">
+            <%= render partial: 'shared/buttons', locals: {event: favorite.event} %>
+          </div>
+
+        </div> <!-- Row -->
+      </div> <!-- Card -->
+    <% end %>
+
+  </div>
+</div>
