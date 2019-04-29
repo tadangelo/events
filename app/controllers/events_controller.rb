@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   
   def index
     @events = Event.all
+    @rsvps = current_user.rsvps if current_user
+    @favorites = current_user.favorites if current_user
   end
 
   def show
@@ -67,7 +69,6 @@ class EventsController < ApplicationController
     def event_params
 
       params.require(:event).permit(:title, :body, :user_id)
-
       params.require(:event).permit(:title, :body, :image, :thumb_image)
 
     end
