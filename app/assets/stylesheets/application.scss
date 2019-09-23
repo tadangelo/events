@@ -14,83 +14,151 @@
  *= require_tree .
  *= require_self
  */
-
  @import "materialize";
-
+ @import url('https://fonts.googleapis.com/css?family=Maven+Pro:700|Roboto:300,300i,500,500i');
+ body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: light;
+  font-size: 16pt;
+}
+h1 {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 58pt;
+  font-style: bold;
+}
+h2 {
+  font-size: 22pt;
+}
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: medium;
+  font-size: 18pt;
+}
+body {
+   // font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(247, 247, 247);
+  font-size: 16pt;
+  font-weight: light;
+ width: 100%;
+ }
+ .row {
+  text-align: center;
+ }
+ a,
+ a:focus,
+ a:hover {
+  transition: background-color, color 100ms ease-out 100ms;
+ }
+  .btn-lrg > input {
+    height: 45px;
+    margin-top: 38px;
+    margin-bottom: 22px;
+    line-height: 35px;
+    white-space: nowrap;
+    background-color: #3ae39f;
+    width: 100%;
+    border-radius: 3px;
+    color: #fff;
+ }
+  .btn-lrg > input:hover {
+    background-color: #00cb79;
+    transition: background-color 100ms ease-out 100ms;
+  }
+    .btn-med > input {
+    height: 45px;
+    margin-top: 38px;
+    margin-bottom: 22px;
+    line-height: 35px;
+    white-space: nowrap;
+    background-color: #3ae39f;
+    width: 70%;
+    border-radius: 3px;
+    color: #fff;
+ }
+  .btn-med > input:hover {
+    background-color: #00cb79;
+    transition: background-color 100ms ease-out 100ms;
+  }
+  .container {
+    align-items: center;
+    
+  }
  .card.horizontal {
    height: 100%;
  }
-
  .card-action {
    text-align: center;
  }
-
  #card-action {
    background: #36e29d;
    &:hover {
      background: #34a853 ;
    }
  }
-
  #card-action a {
    color: white;
  }
-
+ .card {
+  background-color: white;
+ }
+ .card-sizing{
+/*  margin-bottom: 20px;*/
+  text-align: center;
+  background-color: #fff; 
+  padding: 33px 90px 65px 90px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid lightgrey;
+  
+ }
+ .form-control {
+  border: 1px solid black;
+  margin: 0 0 20px 0;
+ }
  .slider {
    border-radius: 1em;
    padding-top: 0px;
  }
-
  .masthead clearfix {
    background: #36e29d;
  }
-
 .event-map {
   width: 95%;
-
 }
-
 .event-main-image {
   width: 100%;
 }
-
 .show-top-row {
   // max-height: 400px;
   overflow: hidden;
   padding: 0px;
   margin: 0px;
   background-color: #0f2937;
-
 }
-
 #map {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .show-wrapper {
   padding: 0px;
   margin:0px;
   background-color: #0f2937;
 }
-
 .show-row {
   margin: 0px;
   padding: 0px;
 }
-
 .show-hide-over {
   overflow:hidden;
 }
-
 #show-info {
   background-color: #0f2937;
   color: white;
   padding: 15px;
 }
-
 .show-title-span {
   position: absolute;
   top: 20px;
@@ -100,12 +168,103 @@
   color: #34a853;
   font-weight: 800;
 }
-
 .nav-masthead {
-   background-color: black;
-   padding-left: 20px;
+   background-color: #fff;
 }
-
 .nav-masthead a{
   padding-left: 20px;
+}
+.input-item {
+  text-align: left;
+  margin-bottom: 22px;
+  
+}
+.link-styles a {
+  color: #26272b;
+}
+.link-styles a:hover {
+  color: #00cb79;
+}
+.top-text {
+  color: #77797a;
+  text-align: center;
+  color: #77797a;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:700|Roboto:300,300i,500,500i');
+* {
+  box-sizing: border-box;
+}
+html {
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16pt;
+  font-weight: light;
+}
+h1 {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 58pt;
+  font-style: bold;
+}
+h2 {
+  font-size: 22pt;
+}
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18pt;
+  font-weight: medium;
+}
+.header {
+  left: 0;
+  margin: 0;
+  min-height: 60px;
+  padding: 0 !important;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+.new-navbar {
+  background-color: rgba(0, 0, 0, 0);
+  background: #fff;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #e5e5e5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  height: 60px;
+  text-align: center;
+  text-decoration-color: rgb(51, 186, 132);
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  top: 0;
+  transition-delay: initial;
+  transition-duration: 0.2s;
+  transition-property: top 0.2s;
+  transition-timing-function: ease-in-out;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+}
+.navbar-brand {
+  font-size: 18px;
+  line-height: 20px;
+}
+.navbar-left {
+  text-align: left;
+}
+.navbar-right {
+  text-align: right;
+}
+.devise-dropdown a {
+  font-size: 13px;
 }

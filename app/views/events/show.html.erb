@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container show-hide-over">
   <div class="card show-wrapper show-hide-over">
     <div class="row show-row show-hide-over">
@@ -10,16 +8,21 @@
       <div class="col-md-4" id="show-info">
         <p>Date: <%= @event.date %></p>
         <p>Description: <%= @event.body %></p>
-        <p>Location: <%= @event.location %>
+        <p>Location: <%= @event.location %></p>
         <p>Attendees: dynamic</p>
+        <div>
         <button class></button>
         Are you going?
       </div>
-
+      <div>
+        <button class></button>
+        Favorite this for later
+      </div>
+        </div>
       <div class="col-md-5" id="map">
         <img class="event-map" src="<%= "https://maps.googleapis.com/maps/api/staticmap?center=" + @location + "&zoom=13&scale=1&size=600x400&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C" + @location %>">
       </div>
-        <div class="col-md-7" id="guest-form">
+        <div class="col-md-5" id="guest-form">
           <form action="#" method="post">
             <div class="form-group">
               <input placeholder="Name" rows="15" class="form-control" id="contact-body"></input>
@@ -31,9 +34,12 @@
             </div>
             <div class="form-group contact-btn-wrapper">
               <button type="submit" class="btn btn-primary contact-btn">Send</button>
-            </div>
-          </form>
+            </div> 
         </div>
+        <div class="col-md-2" id="guest-form">
+          <%= render 'attending_event' %>
+        </div>
+          </form>
       </div>
     </div>
     <div class="container">

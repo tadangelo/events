@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -49,18 +52,34 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 gem 'faker', '~> 1.6', '>= 1.6.6'
+
 gem 'devise', '~> 4.4'
+
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+
 gem 'materialize', '~> 0.4.4'
+
 gem 'materialize-sass'
+
 gem 'material_icons', '~> 2.2', '>= 2.2.1'
+
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
 gem 'bootstrap', '~> 4.0.0.beta3'
+
+gem 'gritter', '~> 1.2'
+
 gem 'devise', '~> 4.4'
+
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+
 gem 'mini_magick', '~> 4.8'
+
 gem 'carrierwave-aws', '~> 1.3'
+
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 
-ruby "2.4.1"
+gem 'petergate', '~> 1.8', '>= 1.8.1'
+
